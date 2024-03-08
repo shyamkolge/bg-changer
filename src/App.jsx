@@ -1,37 +1,172 @@
-import { useState } from 'react'
-import ColorButtons from './components/colorButtons'
+import React, { useState } from 'react';
+import CustomeButton from './components/customeButton';
+import './App.css'; // Import your CSS file for styling
 
+const App = () => {
+    const [color, setColor] = useState('olive');
 
-function App() {
+    const colors = [
+        'aliceblue',
+        'antiquewhite',
+        'aqua',
+        'aquamarine',
+        'azure',
+        'beige',
+        'bisque',
+        'black',
+        'blanchedalmond',
+        'blue',
+        'blueviolet',
+        'brown',
+        'burlywood',
+        'cadetblue',
+        'chartreuse',
+        'chocolate',
+        'coral',
+        'cornflowerblue',
+        'cornsilk',
+        'crimson',
+        'cyan',
+        'darkblue',
+        'darkcyan',
+        'darkgoldenrod',
+        'darkgray',
+        'darkgreen',
+        'darkgrey',
+        'darkkhaki',
+        'darkmagenta',
+        'darkolivegreen',
+        'darkorange',
+        'darkorchid',
+        'darkred',
+        'darksalmon',
+        'darkseagreen',
+        'darkslateblue',
+        'darkslategray',
+        'darkslategrey',
+        'darkturquoise',
+        'darkviolet',
+        'deeppink',
+        'deepskyblue',
+        'dimgray',
+        'dimgrey',
+        'dodgerblue',
+        'firebrick',
+        'floralwhite',
+        'forestgreen',
+        'fuchsia',
+        'gainsboro',
+        'ghostwhite',
+        'gold',
+        'goldenrod',
+        'gray',
+        'green',
+        'greenyellow',
+        'grey',
+        'honeydew',
+        'hotpink',
+        'indianred',
+        'indigo',
+        'ivory',
+        'khaki',
+        'lavender',
+        'lavenderblush',
+        'lawngreen',
+        'lemonchiffon',
+        'lightblue',
+        'lightcoral',
+        'lightcyan',
+        'lightgoldenrodyellow',
+        'lightgray',
+        'lightgreen',
+        'lightgrey',
+        'lightpink',
+        'lightsalmon',
+        'lightseagreen',
+        'lightskyblue',
+        'lightslategray',
+        'lightslategrey',
+        'lightsteelblue',
+        'lightyellow',
+        'lime',
+        'limegreen',
+        'linen',
+        'magenta',
+        'maroon',
+        'mediumaquamarine',
+        'mediumblue',
+        'mediumorchid',
+        'mediumpurple',
+        'mediumseagreen',
+        'mediumslateblue',
+        'mediumspringgreen',
+        'mediumturquoise',
+        'mediumvioletred',
+        'midnightblue',
+        'mintcream',
+        'mistyrose',
+        'moccasin',
+        'navajowhite',
+        'navy',
+        'oldlace',
+        'olive',
+        'olivedrab',
+        'orange',
+        'orangered',
+        'orchid',
+        'palegoldenrod',
+        'palegreen',
+        'paleturquoise',
+        'palevioletred',
+        'papayawhip',
+        'peachpuff',
+        'peru',
+        'pink',
+        'plum',
+        'powderblue',
+        'purple',
+        'rebeccapurple',
+        'red',
+        'rosybrown',
+        'royalblue',
+        'saddlebrown',
+        'salmon',
+        'sandybrown',
+        'seagreen',
+        'seashell',
+        'sienna',
+        'silver',
+        'skyblue',
+        'slateblue',
+        'slategray',
+        'slategrey',
+        'snow',
+        'springgreen',
+        'steelblue',
+        'tan',
+        'teal',
+        'thistle',
+        'tomato',
+        'turquoise',
+        'violet',
+        'wheat',
+        'white',
+        'whitesmoke',
+        'yellow',
+        'yellowgreen'
+    ];
 
-  const [color,setColor] = useState('olive')
+    return (
+        <div className='w-full h-screen duration-200' style={{backgroundColor:color}}>
 
-  return (
-    <div className='w-full h-screen duration-200 'style={{backgroundColor:color}}>
+            <div className='fixed bottom-12 flex items-center justify-center inset-x-0 px-2 gap-x-6 bg-white py-2 rounded-full overflow-x-auto scroll-bar'>
+                {colors.map((color, index) => (
+                    <CustomeButton key={index} color={color} setColor={setColor} />
+                ))}
+            </div>
 
-      <div className='fixed bottom-12 flex flex-wrap justify-center inset-x-0 px-2 bg'>
-
-
-      <div className='bg-white flex flex-wrap justify-center gap-3 shadow-lg px-3 py-2 rounded-3xl'>
-       <ColorButtons color="Red" reff = {setColor}/>
-       <ColorButtons color="Blue" reff = {setColor}/>
-       <ColorButtons color="Black" reff = {setColor}/>
-       <ColorButtons color="Orange" reff = {setColor}/>
-       <ColorButtons color="Cyan" reff = {setColor}/>
-       <ColorButtons color="Green" reff = {setColor}/>
-       <ColorButtons color="Pink" reff = {setColor}/>
-       <ColorButtons color="gold" reff = {setColor}/>
-       <ColorButtons color="brown" reff = {setColor}/>
-       <ColorButtons color="Violet" reff = {setColor}/>
-
-
-      </div>
-
-
-      </div>
-    </div>
-
-  )
+        </div>
+    );
 }
 
-export default App
+export default App;
